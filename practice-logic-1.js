@@ -48,3 +48,53 @@ if (isUserValid && isIPValid && isTimeValid) {
 } else {
     console.log("ALERTA: INTENTO DE ACCESO NO AUTORIZADO");
 }
+​En el desafío de práctica (practice-logic-1.js), tus variables booleanas eran:
+​isUserValid
+​isIPValid
+​isTimeValid
+​Queremos que las tres sean obligatorias para el acceso.
+​Pregunta para escribir el código: ¿Cómo le dices a JavaScript: "Quiero que isUserValid sea true, Y que isIPValid sea true, Y que isTimeValid sea true"?
+​Respuesta (Tu código):
+if (isUserValid && isIPValid && isTimeValid)
+  // La decisión del Firewall (Escríbelo tú mismo)
+if (isUserValid && isIPValid && isTimeValid) {
+    console.log("ACCESO AUTORIZADO AL SERVIDOR DE CONTINGENCIA");
+} else {
+    console.log("ALERTA: INTENTO DE ACCESO NO AUTORIZADO");
+}
+
+Ejecución del codigo final logro completado
+
+
+/*
+  ==============================================
+  PRÁCTICA: SERVIDOR DE CONTINGENCIA (Día 1)
+  ==============================================
+*/
+
+// [1] DATOS DEL INTENTO DE ACCESO 
+const usuario = "AdanD"; 
+const ubicacion_ip = "10.0.0.50"; 
+const hora_acceso = 23; 
+
+// [2] REGLAS DEL SISTEMA FORENSE DE CONTINGENCIA
+const VALID_USER = "AdminForex";
+const VALID_IP_PREFIX = "10.0.0."; 
+const VALID_HOUR = 8; 
+
+// ==========================================
+// *** LÓGICA DE VALIDACIÓN INICIA AQUÍ ***
+// ==========================================
+
+// 1. Validación Booleana
+const isUserValid = (usuario === VALID_USER);
+const isIPValid = ubicacion_ip.startsWith(VALID_IP_PREFIX);
+const isTimeValid = (hora_acceso === VALID_HOUR);
+
+// 2. Decisión del Firewall
+if (isUserValid && isIPValid && isTimeValid) {
+    console.log("ACCESO AUTORIZADO AL SERVIDOR DE CONTINGENCIA");
+} else {
+    console.log("ALERTA: INTENTO DE ACCESO NO AUTORIZADO");
+
+
